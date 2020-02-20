@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+#head{
+	 display:flex;
+	 flex-basis:50%;
+	 border-style:solid;
+	 border-color:white;
+	 background-color:green;
+	 padding-right: 90%;
+}
+#reg{
+      padding-left:70%
+}
+
+
+#banner{
+	display:flex;
+	justify-content:center;
+	
+}
+#rental{
+	padding-left:50%;
+	color:silver;
+	
+}
