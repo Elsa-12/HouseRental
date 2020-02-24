@@ -6,21 +6,23 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel=" stylesheet" href="home.css">
+
 </head>
 <body>
 	<div id="head">
 		<div id="rental">
-			<h1>RentalPortal</h1>
+			<h1 style="font-size:250%">RentalPortal</h1>
 		</div>
-	<div id="reg">
-	<a href="login.jsp">Login</a>
-	<a href="register.jsp">Register</a>
+		<div id="reg">
+			<h3><a href="login.jsp" style="color:steelblue">Login</a></h3>
+			<h3><a href="register.jsp" style="color:steelblue">Register</a></h3>
+		</div>
 	</div>
-	</div>
-	
 	<div id="banner">
-		<img src="houserent.jpg" alt="house pic" height="10%" width="20%" />
+		<img src="houserentals.jpg" alt="house pic" width="45%"/>
+		<img src="houserent.jpg" alt="house pic" width="45%"/>
 	</div>
+	<br>
 	<div id="last">
 		<a href="register.jsp"><button>Register</button></a>
 	</div>

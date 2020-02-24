@@ -6,14 +6,28 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<style>
+body,html{
+height:100%;
+}
+#heading{
+	background-image:url("house2.jpg");
+	background-position: center;
+	height:100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+</style>
 <body>
+<div id="heading">
 	<form>
-		<table align="center" frame="box">
+		<table align="center">
 			<tr>
-				<td><h4 align="center">Login</h4></td>
+				<td><h1 style="color:red">Login</h1></td>
 			</tr>
 			<tr>
-				<td><label for=" ">Email</label></td>
+				<td><label for=" " >Email</label></td>
 				<td><input type="email" name="email" /></td>
 			</tr>
 			<tr>
@@ -21,7 +35,7 @@
 				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
-				<td><center><input type="submit" value="login" /></center></td>
+				<td><input type="submit" value="login" /></td>
 			</tr>
 			<tr>
 				<td><a href="forget.jsp">Forgot Password</a></td>
@@ -31,5 +45,6 @@
 			</tr>
 		</table>
 	</form>
+	</div>
 </body>
 </html>

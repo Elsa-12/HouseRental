@@ -4,21 +4,23 @@
 	 flex-basis:50%;
 	 border-style:solid;
 	 border-color:white;
-	 background-color:green;
-	 padding-right: 90%;
+	 background-color:MediumTurquoise ;
+	 padding-right:80%
 }
 #reg{
-      padding-left:70%
-}
-
+      padding-left:300%
+      }
+#last{
+	display:flex;
+	justify-content:center;
+}      
 
 #banner{
 	display:flex;
-	justify-content:center;
-	
+	justify-content:center;	
 }
 #rental{
 	padding-left:50%;
-	color:silver;
-	
+	color:maroon;
+	padding-down:30%	
 }
