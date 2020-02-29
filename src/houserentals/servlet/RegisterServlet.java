@@ -13,9 +13,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import houserentals.dao.Service;
 import houserentals.dto.RegisterProfile;
-import housrental.util.Validations;
+import housrentals.util.Validations;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
@@ -25,20 +27,20 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String fullname=request.getParameter("fullname");
 		String email=request.getParameter("email");
-		String mobileno=request.getParameter("mobileno");
+		String mobile=request.getParameter("mobile");
 		String owner=request.getParameter("owner");
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
-		String confirmPassword=request.getParameter("confirmPassword");
+		String confirmpassword=request.getParameter("confirmpassword");
 		
 		RegisterProfile profile=new RegisterProfile();
-		profile.setFullName(fullname);
+		profile.setFullname(fullname);
 		profile.setEmail(email);
-		profile.setMobileno(mobileno);
+		profile.setMobile(mobile);
 		profile.setOwner(owner);
 		profile.setUsername(username);
 		profile.setPassword(password);
-		profile.setConfirmPassword(confirmPassword);
+		profile.setConfirmpassword(confirmpassword);
 		
 	    PrintWriter out=response.getWriter();
 		Validations validations=new Validations();
@@ -47,21 +49,16 @@ public class RegisterServlet extends HttpServlet {
 			request.setAttribute("errorMessages",errorMessages);
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 		}else {
-		EntityManagerFactory entityManagerFactor=Persistence.createEntityManagerFactory("houserental");
-		EntityManager entityManager=entityManagerFactor.createEntityManager();
-		EntityTransaction transcation=entityManager.getTransaction();
-		out.println("Inserted");
-		try {
-			transcation.begin();
-			entityManager.persist(profile);
-			transcation.commit();
-		}catch(Exception e) {
-			e.printStackTrace();
-			transcation.rollback();
-		}finally {
-			entityManager.close();
-			entityManagerFactor.close();
-		}
+			  Service service=new Service();
+		       RegisterProfile registerDetails=service.register(profile);
+		        if(registerDetails !=null) {
+		        	//request.setAttribute("registerDetails",registerDetails);
+		        	request.getRequestDispatcher("login.jsp").forward(request, response);
+		        	out.print("registration successful");
+		        }else {
+		        	request.setAttribute("sqlError","Some internal error occured");
+		        	request.getRequestDispatcher("register.jsp").forward(request, response);
+		        }
 		}
 	}
 

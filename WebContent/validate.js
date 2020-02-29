@@ -2,16 +2,16 @@
 	
 
 	let elements = document.forms['register'].elements;
-	let fullName = elements['fullName'].value;
+	let fullname = elements['fullname'].value;
 	let email = elements['email'].value;
-	let mobileno = elements['mobileno'].value;
+	let mobile = elements['mobile'].value;
 	let username = elements['username'].value;
 	let password = elements['password'].value;
-	let confirmPassword = elements['confirmpassword'].value;
+	let confirmpassword = elements['confirmpassword'].value;
 	
 	let valid = true;
 	
-	if (fullName == '' || fullName.length == 0) {
+	if (fullname == '' || fullname.length == 0) {
 		document.getElementById('fullnameerror').innerHTML = 'Enter the fullname';
 		valid = false;
 	}
@@ -19,7 +19,7 @@
 		document.getElementById('emailerror').innerHTML = 'Enter the email';
 		valid = false;
 	}
-	if (mobileno == '' || mobileno.length == 0) {
+	if (mobile == '' || mobile.length == 0) {
 		document.getElementById('mobileerror').innerHTML = 'Enter the mobile number';
 		valid = false;
 	}
@@ -31,7 +31,7 @@
 		document.getElementById('passworderror').innerHTML = 'Enter the password';
 		valid = false;
 	}
-	if (confirmPassword == '' || confirmPassword.length == 0) {
+	if (confirmpassword == '' || confirmpassword.length == 0) {
 		document.getElementById('confirmpassworderror').innerHTML = 'Enter the confirmPassword';
 		valid = false;
 	}

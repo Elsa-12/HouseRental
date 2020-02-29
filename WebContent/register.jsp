@@ -27,8 +27,8 @@ height:100%;
 		<td><h1 style="color:red">Registration</h1></td>
 		</tr>
 			<tr>
-				<td><label for=" ">FullName</label></td>
-				<td><input type="text" name="fullName" value="${param.fullName}" pattern="[a-zA-Z\s]{3,20}"/></td>
+				<td><label for=" ">Fullname</label></td>
+				<td><input type="text" name="fullname" value="${param.fullname}" pattern="[a-zA-Z\s]{3,20}"/></td>
 					<td> <span class="error" id="fullnameerror"></span></td>
 				<td><span style="color:red">${errorMessages.fullnameerror}</span></td>
 			</tr>
@@ -40,7 +40,7 @@ height:100%;
 			</tr>
 			<tr>
 				<td><label for=" ">Mobile</label></td>
-				<td><input type="tel" name="mobileno" value="${param.mobileno}" pattern="[0-9]{10}"/></td>
+				<td><input type="tel" name="mobile" value="${param.mobile}" pattern="[0-9]{10}"/></td>
 				<td> <span class="error" id="mobileerror"></span></td>
                 <td><span style="color:red">${errorMessages.mobileerror}</span></td>
 			</tr>
@@ -63,7 +63,7 @@ height:100%;
 			</tr>
 			<tr>
 				<td><label for=" ">ConfirmPassword</label></td>
-				<td><input type="password" name="confirmpassword" value="${param.confirmPassword}" pattern="[a-zA-z0-9@$#]{8,20}" /></td>
+				<td><input type="password" name="confirmpassword" value="${param.confirmpassword}" pattern="[a-zA-z0-9@$#]{8,20}" /></td>
 				<td> <span class="error" id="confirmpassworderror"></span></td>
                 <td><span style="color:red">${errorMessages.confirmpassworderror}</span></td>
 			</tr>

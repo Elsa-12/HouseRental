@@ -21,18 +21,23 @@ height:100%;
 </style>
 <body>
 <div id="heading">
-	<form>
+	<form novalidate name='login' action="login" onsubmit="return loginvalidate()" method="post">>
 		<table align="center">
 			<tr>
 				<td><h1 style="color:red">Login</h1></td>
 			</tr>
 			<tr>
 				<td><label for=" " >Email</label></td>
-				<td><input type="email" name="email" /></td>
+				<td><input type="email" name="email"  value="${param.email}" pattern="[a-zA-Z0-9_$#]{1,}+@[a-zA-Z]{2,7}+.[a-z]{3,6}" /></td>
+				<td> <span class="error" id="emailerror"></span></td>
+				<td><span style="color:red">${errorMessages.emailerror}</span></td>
 			</tr>
 			<tr>
 				<td><label for=" ">Password</label></td>
-				<td><input type="password" name="password" /></td>
+				<td><input type="password" name="password" value="${param.password}" pattern="[a-zA-z0-9@$#]{8,20}" /></td>
+				<td> <span class="error" id="passworderror"></span></td>
+                <td><span style="color:red">${errorMessages.passworderror}</span></td>	
+			</tr>
 			</tr>
 			<tr>
 				<td><input type="submit" value="login" /></td>
@@ -46,5 +51,6 @@ height:100%;
 		</table>
 	</form>
 	</div>
+	<script src="loginvalidate.js"></script>
 </body>
 </html>

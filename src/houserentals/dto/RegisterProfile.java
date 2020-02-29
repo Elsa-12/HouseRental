@@ -11,13 +11,14 @@ public class RegisterProfile {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(nullable = false)
 	private int id;
 	@Column(nullable=false)
-	private String fullName;
+	private String fullname;
 	@Column(unique=true, nullable=false )
 	private String email;
 	@Column(unique=true, nullable=false )
-	private String mobileno;
+	private String mobile;
 	@Column(nullable=false)
 	private String owner;
 	@Column(nullable=false)
@@ -25,24 +26,24 @@ public class RegisterProfile {
 	@Column(nullable=false)
 	private String  password;
 	@Column(nullable=false)
-	private String confirmPassword;
+	private String confirmpassword;
+	
 	
 	public RegisterProfile() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public RegisterProfile(int id, String fullName, String email, String mobileno,String owner, String username, String password,
-			String confirmPassword) {
+	public RegisterProfile(int id, String fullname, String email, String mobile,String owner, String username, String password,
+			String confirmpassword) {
 		super();
 		this.id = id;
-		this.fullName = fullName;
+		this.fullname = fullname;
 		this.email = email;
-		this.mobileno = mobileno;
+		this.mobile = mobile;
 		this.owner=owner;
 		this.username = username;
 		this.password = password;
-		this.confirmPassword = confirmPassword;
+		this.confirmpassword = confirmpassword;
 	}
 
 	public int getId() {
@@ -53,12 +54,12 @@ public class RegisterProfile {
 		this.id = id;
 	}
 
-	public String getFullName() {
-		return fullName;
+	public String getFullname() {
+		return fullname;
 	}
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 
 	public String getEmail() {
@@ -69,12 +70,12 @@ public class RegisterProfile {
 		this.email = email;
 	}
 
-	public String getMobileno() {
-		return mobileno;
+	public String getMobile() {
+		return mobile;
 	}
 
-	public void setMobileno(String mobileno) {
-		this.mobileno = mobileno;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
 	public String getOwner() {
@@ -101,18 +102,18 @@ public class RegisterProfile {
 		this.password = password;
 	}
 
-	public String getConfirmPassword() {
-		return confirmPassword;
+	public String getConfirmpassword() {
+		return confirmpassword;
 	}
 
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
+	public void setConfirmpassword(String confirmpassword) {
+		this.confirmpassword = confirmpassword;
 	}
 
 	@Override
 	public String toString() {
-		return "RegisterProfile [id=" + id + ", fullName=" + fullName + ", email=" + email + ", mobileno=" + mobileno
-				+ ",owner=" + owner + ", username=" + username + ", password=" + password + ", confirmPassword=" + confirmPassword + "]";
+		return "RegisterProfile [id=" + id + ", fullname=" + fullname + ", email=" + email + ", mobile=" + mobile
+				+ ",owner=" + owner + ", username=" + username + ", password=" + password + ", confirmpassword=" + confirmpassword + "]";
 	}	
 }
 

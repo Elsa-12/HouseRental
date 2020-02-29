@@ -8,12 +8,13 @@
 	 padding-right:80%
 }
 #reg{
-      padding-left:300%
-      }
+	padding-left:300%;
+}
 #last{
 	display:flex;
 	justify-content:center;
-}      
+} 
+
 
 #banner{
 	display:flex;
